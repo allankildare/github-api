@@ -7,16 +7,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
+    <script src="https://kit.fontawesome.com/ea399319a5.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="./style/main.css">
     <script src="./scripts/script.js" defer></script>
 
     <title>Busca na API Github</title>
 </head>
 <body>
-    <input type="text" name="" id="usuario">
-    <input type="button" value="Buscar" id="buscar">
-    <br>
     <div class="container" id="container">
+        <div class="busca">
+            <input type="text" class="input-text" name="" id="usuario">
+            <input type="button" class="input-button" value="Buscar" id="buscar">
+            <br>
+        </div>
         <section class="profile">
             <div class="photo">
                 <img src="" alt="Usuário do GitHub" id="profile-photo">
@@ -26,12 +30,10 @@
                 <h2 id="username">Nome de usuário</h2>
             </div>
         </section>
-            <div class="repositories" id="repo">
-                <div id="repo-title">
-
-                </div>
-                
+        <div class="repositories" id="repo">
+            <div id="repo-title">
             </div>
+        </div>
     </div>
 </body>
 </html>

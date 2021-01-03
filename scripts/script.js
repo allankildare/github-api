@@ -55,6 +55,9 @@ class Model {
     }
     
     getName() {
+        if (this._name == null) {
+            this._name = this._username
+        }
         return this._name
     }
 
@@ -86,14 +89,23 @@ class View {
         let repository = document.getElementById("repo")
 
         for (let repo of repos) {
-            let repoName = `<p>${repo.name}</p>`
+            let repoName = `<p><strong>${repo.name}</strong></p>`
             repository.innerHTML += repoName
             
-            let url = `<a href="${repo.html_url}">Link para repositório</a>`
-            repository.innerHTML += url
+            let description = `<p>${repo.description}</p>`
+            repository.innerHTML += description
             
+            let url = `<a href="${repo.html_url}"><i class="fas fa-link"></i>Link</a>`
+            
+            repository.innerHTML += url
+
+            if (repo.language == null) {
+                repo.language = "Linguagem não identificada"
+            }
+
             let language = `<p>${repo.language}</p>`
             repository.innerHTML += language
+            console.log(repo)
         }
     }
 }
