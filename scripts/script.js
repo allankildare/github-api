@@ -103,7 +103,7 @@ class View {
                 repo.language = "Linguagem não identificada"
             }
 
-            let language = `<p>${repo.language}</p>`
+            let language = `<p style="padding-bottom=10px;">${repo.language}</p>`
             repository.innerHTML += language
             console.log(repo)
         }

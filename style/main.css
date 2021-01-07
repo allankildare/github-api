@@ -13,11 +13,54 @@ body {
 .container {
     background-color: #f2f2f2;
     width: 90vw;
+    height: 95vh;
     border-radius: 10px;
-    padding: 10px 15px;
+    overflow: hidden;
+    
     margin: 15px auto;
+    display: flex;
 }
 
+.container aside, .container main {
+    width: 45vw;
+}
+
+.container aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #323131;
+}
+
+.fa-github {
+    font-size: 80px;
+    text-align: center;
+    color: #f2f2f2;
+}
+
+h1.search-title {
+    font-size: 36px;
+    text-align: center;
+    color: #f2f2f2;
+}
+
+h2.search-subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    font-style: italic;
+    padding-bottom: 10px;
+    color: #e2e2e2;
+}
+
+.container main {
+    overflow: scroll;
+    padding-left: 15px;
+}
+
+.profile {
+    margin: 15px 0;
+}
 .busca {
     display: flex;
     justify-content: center;
