@@ -112,6 +112,13 @@ h2.search-subtitle {
     font-style: italic;
 }
 
+/* vem junto a requisicao de api*/
 .title-repos {
     font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.div-repository {
+    margin-bottom: 12px;
 }

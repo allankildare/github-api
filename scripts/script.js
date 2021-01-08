@@ -80,32 +80,58 @@ class View {
         username.textContent = data.getUsername()
         img.src= data.getImg()
 
-        let repository = document.getElementById("repo-title")
-        repository.innerHTML += `<h1 class="title-repos">Aqui estão os repositórios de ${data.getName()}</h1>`
+        //let div = document.getElementById("repo-title")
+        //if (div != null) div.parentNode.removeChild( div )
+
+        // let main = document.getElementById("main")
+
+        // let repositoryTitle = document.createElement('div')
+        // repositoryTitle.id = "repo-title"
+        // repositoryTitle.innerHTML += `<h1 class="title-repos">Aqui estão os repositórios de ${data.getName()}</h1>`
+        // main.appendChild(repositoryTitle)
+
+        let repoTitle = document.getElementById("repo-title")
+        repoTitle.textContent = `Aqui estão os repositórios de ${data.getName()}`
     }
 
     PrintRepos (data) {
         let repos = data._repos
-        let repository = document.getElementById("repo")
+        
+        let div = document.getElementById("repo")
+        if (div != null) {
+            div.parentNode.removeChild(div)
+        }
+        
+        let main = document.getElementById("main")
+        let repository = document.createElement("div")
+        repository.id = "repo"
+        repository.className = "repositories"
+        main.appendChild(repository)
 
         for (let repo of repos) {
+            let repoTitle = document.getElementById("repo-title")
+        
+            let divRepo = document.createElement('div')
+            divRepo.className = 'div-repository'
+            
             let repoName = `<p><strong>${repo.name}</strong></p>`
-            repository.innerHTML += repoName
+            divRepo.innerHTML += repoName
             
             let description = `<p>${repo.description}</p>`
-            repository.innerHTML += description
+            divRepo.innerHTML += description
             
             let url = `<a href="${repo.html_url}"><i class="fas fa-link"></i>Link</a>`
             
-            repository.innerHTML += url
+            divRepo.innerHTML += url
 
             if (repo.language == null) {
                 repo.language = "Linguagem não identificada"
             }
 
             let language = `<p style="padding-bottom=10px;">${repo.language}</p>`
-            repository.innerHTML += language
-            console.log(repo)
+            divRepo.innerHTML += language
+
+            repository.appendChild(divRepo)
         }
     }
 }
