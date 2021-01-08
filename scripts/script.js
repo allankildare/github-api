@@ -80,16 +80,6 @@ class View {
         username.textContent = data.getUsername()
         img.src= data.getImg()
 
-        //let div = document.getElementById("repo-title")
-        //if (div != null) div.parentNode.removeChild( div )
-
-        // let main = document.getElementById("main")
-
-        // let repositoryTitle = document.createElement('div')
-        // repositoryTitle.id = "repo-title"
-        // repositoryTitle.innerHTML += `<h1 class="title-repos">Aqui estão os repositórios de ${data.getName()}</h1>`
-        // main.appendChild(repositoryTitle)
-
         let repoTitle = document.getElementById("repo-title")
         repoTitle.textContent = `Aqui estão os repositórios de ${data.getName()}`
     }
