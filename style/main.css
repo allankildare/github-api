@@ -91,7 +91,6 @@ h2.search-subtitle {
 .profile {
     display: flex;
     align-items: center;
-    
 }
 
 .photo img {
@@ -124,6 +123,16 @@ h2.search-subtitle {
     background: #c7c7c7;
 }
 
+/* cor dos links */
+a, a:visited {
+    color: #000;
+}
+
+a:hover {
+    transition: .4s;
+    color: #2e2e2e;
+}
+
 /* vem junto a requisicao de api*/
 .title-repos {
     font-size: 24px;
@@ -133,6 +142,9 @@ h2.search-subtitle {
 
 .div-repository {
     margin-bottom: 12px;
+    background-color: rgb(220, 220, 220);
+    padding: 5px 10px;
+    border-radius: 10px;
 }
 
 .repo-name {
