@@ -109,18 +109,17 @@ class View {
         main.appendChild(repository)
 
         for (let repo of repos) {
-            let repoTitle = document.getElementById("repo-title")
-        
             let divRepo = document.createElement('div')
             divRepo.className = 'div-repository'
             
-            let repoName = `<p><strong>${repo.name}</strong></p>`
+            let repoName = `<p class="repo-name"><strong>${repo.name}</strong></p>`
             divRepo.innerHTML += repoName
             
+            if (repo.description == null) repo.description = "Nenhuma descrição encontrada..."
             let description = `<p>${repo.description}</p>`
             divRepo.innerHTML += description
             
-            let url = `<a href="${repo.html_url}"><i class="fas fa-link"></i>Link</a>`
+            let url = `<a href="${repo.html_url}"><i class="fas fa-link"></i> Link</a>`
             
             divRepo.innerHTML += url
 
@@ -132,6 +131,7 @@ class View {
             divRepo.innerHTML += language
 
             repository.appendChild(divRepo)
+            console.log(repo)
         }
     }
 }
