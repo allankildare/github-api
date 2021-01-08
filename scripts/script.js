@@ -144,8 +144,16 @@ let btn = document.getElementById("buscar")
 let controller = new Controller
 
 btn.addEventListener("click", () => {
-    let input = document.getElementById("usuario").value
+    let inputValue = document.getElementById("usuario").value
+    controller.FindRepos(inputValue)
+    controller.FindUser(inputValue)
+})
 
-    controller.FindRepos(input)
-    controller.FindUser(input)
+let input = document.getElementById("usuario")
+input.addEventListener('keypress', e => {
+    let inputValue = document.getElementById("usuario").value
+    if (e.key == 'Enter' || e.keyCode == 13) {
+        controller.FindRepos(inputValue)
+        controller.FindUser(inputValue)
+    }
 })
