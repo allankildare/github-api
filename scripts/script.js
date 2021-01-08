@@ -118,20 +118,15 @@ class View {
             if (repo.description == null) repo.description = "Nenhuma descrição encontrada..."
             let description = `<p>${repo.description}</p>`
             divRepo.innerHTML += description
-            
-            let url = `<a href="${repo.html_url}"><i class="fas fa-link"></i> Link</a>`
-            
-            divRepo.innerHTML += url
 
-            if (repo.language == null) {
-                repo.language = "Linguagem não identificada"
-            }
-
-            let language = `<p style="padding-bottom=10px;">${repo.language}</p>`
+            if (repo.language == null) repo.language = "Linguagem não identificada"
+            let language = `<p style="font-style:italic;">${repo.language}</p>`
             divRepo.innerHTML += language
 
+            let url = `<a href="${repo.html_url}" target="_blank" style="padding-bottom=10px;"><i class="fas fa-link"></i> Link</a>`
+            divRepo.innerHTML += url
+
             repository.appendChild(divRepo)
-            console.log(repo)
         }
     }
 }
